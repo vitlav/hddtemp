@@ -26,7 +26,8 @@ AC_C_CONST
 AC_STRUCT_TM
 
 dnl internationalization macros
-AM_GNU_GETTEXT_VERSION([0.18.1])
+AM_GNU_GETTEXT_VERSION([0.19.6])
+AM_GNU_GETTEXT_REQUIRE_VERSION([0.19.6])
 AM_GNU_GETTEXT([external])
 
 dnl reasonable guesses for where stuff is installed
