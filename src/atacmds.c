@@ -115,8 +115,10 @@ enum e_powermode ata_get_powermode(int device) {
          state = PWM_UNKNOWN;
        else
          state = PWM_SLEEPING;
+    } else if (args[2] == 0xFF || (args[2] & 0xFC) == 0x80) {
+       state = PWM_ACTIVE;
     } else {
-       state = ( (args[2] == 0xFF) ? PWM_ACTIVE : PWM_STANDBY );
+       state = PWM_STANDBY;
     }
 
   return state;
