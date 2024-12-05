@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hddtemp 0.3-beta14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-06-29 16:24+0200\n"
+"POT-Creation-Date: 2024-10-05 22:21-0500\n"
 "PO-Revision-Date: 2006-03-29 23:22+0000\n"
 "Last-Translator: Miguel Figueiredo <elmig@debianp.org>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
-"Language: pt_PT\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/hddtemp.c:156
+#: src/hddtemp.c:165
 #, c-format
 msgid ""
 "\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Modelo: %s\n"
 "\n"
 
-#: src/hddtemp.c:189
+#: src/hddtemp.c:198
 #, c-format
 msgid ""
 "WARNING: Drive %s doesn't seem to have a temperature sensor.\n"
@@ -43,32 +43,27 @@ msgstr ""
 "net).\n"
 "AVISO: Veja as opções --help, --debug e --drivebase.\n"
 
-#: src/hddtemp.c:197
+#: src/hddtemp.c:206
 #, c-format
 msgid "%s: %s:  no sensor\n"
 msgstr "%s: %s: sem sensor\n"
 
-#: src/hddtemp.c:211
-#, c-format
-msgid "%s: %s:  %d%sC or %sF\n"
-msgstr "%s: %s: %d%sC ou %sF\n"
-
-#: src/hddtemp.c:235
+#: src/hddtemp.c:228
 #, c-format
 msgid "%s: %s: drive is sleeping\n"
 msgstr "%s: %s: o disco está adormecido\n"
 
-#: src/hddtemp.c:242
+#: src/hddtemp.c:235
 #, fuzzy, c-format
 msgid "%s: %s:  drive supported, but it doesn't have a temperature sensor.\n"
 msgstr "%s: %s: disco conhecido, mas não tem um sensor de temperatura.\n"
 
-#: src/hddtemp.c:246
+#: src/hddtemp.c:239
 #, c-format
 msgid "ERROR: %s: %s: unknown returned status\n"
 msgstr "ERRO: %s: %s: estado devolvido desconhecido\n"
 
-#: src/hddtemp.c:261
+#: src/hddtemp.c:254
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -81,17 +76,17 @@ msgstr ""
 "que lê a página do manual hddtemp antes de me enviar um relatório (secção\n"
 "REPORT). Obrigado.\n"
 
-#: src/hddtemp.c:338
+#: src/hddtemp.c:333
 #, c-format
 msgid "ERROR: invalid separator.\n"
 msgstr "ERRO: separador inválido.\n"
 
-#: src/hddtemp.c:349
+#: src/hddtemp.c:344
 #, c-format
 msgid "ERROR: invalid port number.\n"
 msgstr "ERRO: número de port inválido\n"
 
-#: src/hddtemp.c:371
+#: src/hddtemp.c:366
 #, fuzzy, c-format
 msgid ""
 " Usage: hddtemp [OPTIONS] [TYPE:]DISK1 [[TYPE:]DISK2]...\n"
@@ -99,7 +94,11 @@ msgid ""
 "   hddtemp displays the temperature of drives supplied in argument.\n"
 "   Drives must support S.M.A.R.T.\n"
 "\n"
-"  TYPE could be SATA, PATA or SCSI. If omitted hddtemp will try to guess.\n"
+"  TYPE could be SATA, NVME, PATA or SCSI. If omitted hddtemp will try to "
+"guess.\n"
+"\n"
+"  DISK could be device like /dev/[hs]d[a-z] or /dev/nvme[0-9]n[1-9] or "
+"omitted.\n"
 "\n"
 "  -b   --drivebase   :  display database file content that allow hddtemp to\n"
 "                        recognize supported drives.\n"
@@ -158,30 +157,30 @@ msgstr ""
 "\n"
 "Relatar bugs ou novos discos para <hddtemp@guzu.net>.\n"
 
-#: src/hddtemp.c:402
+#: src/hddtemp.c:401
 #, c-format
 msgid "hddtemp version %s\n"
 msgstr "hddtemp versão %s\n"
 
-#: src/hddtemp.c:418
+#: src/hddtemp.c:417
 #, c-format
 msgid "ERROR: invalid interval.\n"
 msgstr "ERRO: intervalo inválido.\n"
 
-#: src/hddtemp.c:438
-#, c-format
-msgid "Too few arguments: you must specify one drive, at least.\n"
-msgstr ""
-"Número de argumentos insuficiente: tem de especificar pelo menos um disco.\n"
-
-#: src/hddtemp.c:448
+#: src/hddtemp.c:442
 #, c-format
 msgid "ERROR: can't use --debug and --daemon or --syslog options together.\n"
 msgstr ""
 "ERRO: não pode utilizar em conjunto as opções --debug e --daemon ou --"
 "syslog.\n"
 
-#: src/hddtemp.c:505
+#: src/hddtemp.c:460
+#, c-format
+msgid "Too few arguments: you must specify one drive, at least.\n"
+msgstr ""
+"Número de argumentos insuficiente: tem de especificar pelo menos um disco.\n"
+
+#: src/hddtemp.c:518
 #, c-format
 msgid "ERROR: %s: can't determine bus type (or this bus type is unknown)\n"
 msgstr ""
@@ -192,7 +191,7 @@ msgstr ""
 msgid "unknown"
 msgstr "desconhecido"
 
-#: src/ata.c:85 src/ata.c:104 src/scsi.c:91
+#: src/ata.c:85 src/ata.c:104 src/scsi.c:92
 #, c-format
 msgid "S.M.A.R.T. not available"
 msgstr "S.M.A.R.T. não está disponível"
@@ -213,25 +212,29 @@ msgstr ""
 msgid "%s%s| %5d | %s\n"
 msgstr "%s%s| %5d | %s\n"
 
-#: src/db.c:236
+#: src/db.c:237
 #, c-format
 msgid "hddtemp: can't open %1$s: %2$s\n"
 msgstr "hddtemp: não pode abrir %1$s: %2$s\n"
 
-#: src/db.c:250
+#: src/db.c:251
 #, c-format
 msgid "ERROR: syntax error at line %1$d in %2$s\n"
 msgstr "ERRO: erro de sintaxe na linha %1$d em %2$s\n"
 
-#: src/db.c:257
+#: src/db.c:258
 #, c-format
 msgid "  ERROR: line exceed %1$d characters in %2$s.\n"
 msgstr "  ERRO: a linha execedeu %1$d caracteres em %2$s.\n"
 
-#: src/scsi.c:111 src/scsi.c:129
+#: src/scsi.c:112 src/scsi.c:130
 #, c-format
 msgid "log sense failed : %s"
 msgstr "detecção de log falhou: %s"
+
+#, c-format
+#~ msgid "%s: %s:  %d%sC or %sF\n"
+#~ msgstr "%s: %s: %d%sC ou %sF\n"
 
 #~ msgid ""
 #~ "WARNING: Drive %s doesn't appear in the database of supported drives\n"
