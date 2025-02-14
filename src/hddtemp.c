@@ -270,9 +270,11 @@ int main(int argc, char* argv[]) {
   backtrace_sigill();
   backtrace_sigbus();
 
+#if ENABLE_NLS
   setlocale (LC_ALL, "");
   bindtextdomain (PACKAGE, LOCALEDIR);
   textdomain (PACKAGE);
+#endif
 
   show_db = debug = numeric = quiet = wakeup = af_hint = syslog_interval = foreground = 0;
   unit = DEFAULT;
