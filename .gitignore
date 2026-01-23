@@ -14,8 +14,7 @@ config.log
 config.status
 doc/Makefile
 doc/Makefile.in
-m4/Makefile
-m4/Makefile.in
+m4/
 po/Makefile
 po/Makefile.in
 po/POTFILES

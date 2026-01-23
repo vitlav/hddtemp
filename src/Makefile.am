@@ -20,5 +20,5 @@ hddtemp_CFLAGS = -Wall -W -rdynamic
 
 localedir = $(datadir)/locale
 
-INCLUDES = -I. -I$(srcdir) -I..
+AM_CPPFLAGS = -I. -I$(srcdir) -I..
 DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@

@@ -14,8 +14,7 @@ dnl Checks for programs.
 AC_PROG_CC
 AC_PROG_INSTALL
 
-# append the host alias to the tools for cross compiling
-AC_HEADER_STDC
+# Check for headers
 AC_CHECK_HEADERS(fcntl.h)
 AC_CHECK_HEADERS(netinet/in.h)
 AC_CHECK_HEADERS(linux/nvme_ioctl.h)
