@@ -289,15 +289,16 @@ if (!foreground) {
     default:
       exit(0);
     }
-  }
-  if (chdir("/") != 0)
-      exit(1);
-  umask(0);
 
-  /* close standard input and output */
-  close(0);
-  close(1);
-  close(2);
+    if (chdir("/") != 0)
+        exit(1);
+    umask(0);
+
+    /* close standard input and output */
+    close(0);
+    close(1);
+    close(2);
+  }
 
   if (tcp_daemon)
     daemon_open_sockets();
