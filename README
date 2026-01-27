@@ -24,7 +24,8 @@ Please see COPYING file.
 
 INSTALLATION
 ============
-Run ./configure (see --help for options), then just type 'make'.
+If building from git, first run ./autogen.sh to generate the configure script.
+Then run ./configure (see --help for options), and type 'make'.
 
 Latests hddtemp.db is located in the data dir.
 
