@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
 
 # Initialization
-AC_INIT([hddtemp], [0.4.2])
+AC_INIT([hddtemp], [0.4.3])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_HEADERS([config.h])
 
