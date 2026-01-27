@@ -9,7 +9,7 @@ hddtemp_SOURCES = ata.c ata.h \
                   db.c db.h \
 		  hddtemp.c hddtemp.h \
 		  sata.c sata.h \
-		  satacmds.c statcmds.h \
+		  satacmds.c satacmds.h \
 		  scsi.c scsi.h \
 		  scsicmds.c scsicmds.h \
 		  backtrace.c backtrace.h \
