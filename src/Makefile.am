@@ -5,6 +5,7 @@ sbin_PROGRAMS = hddtemp
 
 hddtemp_SOURCES = ata.c ata.h \
 		  atacmds.c atacmds.h \
+		  cciss.c cciss.h \
 		  daemon.c daemon.h \
                   db.c db.h \
 		  hddtemp.c hddtemp.h \

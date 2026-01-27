@@ -62,6 +62,7 @@
 #include "sata.h"
 #include "scsi.h"
 #include "nvme.h"
+#include "cciss.h"
 #include "db.h"
 #include "hddtemp.h"
 #include "backtrace.h"
@@ -91,6 +92,7 @@ static void init_bus_types() {
 #ifdef HAVE_LINUX_NVME_IOCTL_H
   bus[BUS_NVME] = &nvme_bus;
 #endif
+  bus[BUS_CCISS] = &cciss_bus;
 }
 
 /*******************************************************
@@ -132,6 +134,9 @@ static enum e_bustype probe_bus_type(struct disk *dsk) {
     return BUS_SATA;
   else if(bus[BUS_ATA]->probe(dsk->fd))
     return BUS_ATA;
+  /* CCISS must be probed before SCSI because CCISS uses SCSI commands */
+  else if(bus[BUS_CCISS]->probe(dsk->fd))
+    return BUS_CCISS;
   else if(bus[BUS_SCSI]->probe(dsk->fd))
     return BUS_SCSI;
 #ifdef HAVE_LINUX_NVME_IOCTL_H

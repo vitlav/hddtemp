@@ -35,7 +35,7 @@ typedef __u16 u16;
 #define F_to_C(val) (int)(((double)(val)-32.0)/1.8)
 #define C_to_F(val) (int)(((double)(val)*(double)1.8) + (double)32.0)
 
-enum e_bustype { ERROR = 0, BUS_UNKNOWN, BUS_SATA, BUS_ATA, BUS_SCSI, BUS_NVME, BUS_TYPE_MAX };
+enum e_bustype { ERROR = 0, BUS_UNKNOWN, BUS_SATA, BUS_ATA, BUS_SCSI, BUS_NVME, BUS_CCISS, BUS_TYPE_MAX };
 enum e_gettemp {
   GETTEMP_ERROR,            /* Error */
   GETTEMP_NOT_APPLICABLE,   /* */
